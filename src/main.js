@@ -9,6 +9,8 @@ import fastClick from 'fastclick'
 import './assets/styles/reset.css'
 //一像素边框解决方案
 import './assets/styles/border.css'
+// 引入字体图标   简化路径：在build中配置了'styles':resolve('src/assets/styles'),
+import 'styles/iconfont.css'
 Vue.config.productionTip = false
 fastClick.attach(document.body)
     /* eslint-disable no-new */
