@@ -1,12 +1,12 @@
 <template>
   <div class="icons">
-    <swiper >
+    <swiper :options="swiperOption" >
      <swiper-slide v-for="(page,index) of pages" :key="index" >
       <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
-              <img class="icon-img-content" :src="item.icon">
+              <img class="icon-img-content" :src="item.imgUrl">
           </div>
-          <p class="icon-desc">{{item.title}}</p>
+          <p class="icon-desc">{{item.desc}}</p>
       </div>
      </swiper-slide>
     </swiper>
@@ -16,58 +16,16 @@
 <script>
 export default {
 name:'HomeIcons',
-data() {
-    return {
-        list:
-        [
-             {
-                 id:'001',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'002',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'003',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'004',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'005',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'006',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'007',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'008',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-                 {
-                 id:'009',
-                 icon:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                 title:'热门景点'
-             },
-        ]
-    }
+props:{
+    list:Array
 },
+ data () {
+    return {
+      swiperOption: {
+        autoplay: false
+      }
+    }
+  },
 computed:{
     pages(){
         // 算法逻辑 向下取整 前八个数据计算结果均为0，push到pages数组的第0位

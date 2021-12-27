@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="item of List"
+        v-for="item of list"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -21,7 +21,10 @@
 
 <script>
 export default {
-     name: 'HomeWeekend',
+    name: 'HomeWeekend',
+    props:{
+      list:Array
+    },
     data() {
       return {
             List:[

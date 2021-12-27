@@ -3,7 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
         <li class="item border-bottom" 
-        v-for="item of recommendList" 
+        v-for="item of list" 
         :key="item.id"
         >
             <img class="item-img" :src="item.imgUrl" >
@@ -20,29 +20,8 @@
 <script>
 export default {
 name:'HomeRecommend',
-data() {
-    return {
-        recommendList:[
-            {
-                id:'001',
-                imgUrl:'https://img0.baidu.com/it/u=4089622531,494058583&fm=26&fmt=auto',
-                title:'故宫博物院',
-                desc:'建立于1925年，是在明朝、清朝两代皇宫及其收藏的基础上建立起来的中国综合性博物馆'
-            },
-                {
-                id:'002',
-                imgUrl:'https://img0.baidu.com/it/u=4089622531,494058583&fm=26&fmt=auto',
-                title:'故宫博物院',
-                desc:'建立于1925年，是在明朝、清朝两代皇宫及其收藏的基础上建立起来的中国综合性博物馆'
-            },
-                {
-                id:'003',
-                imgUrl:'https://img0.baidu.com/it/u=4089622531,494058583&fm=26&fmt=auto',
-                title:'故宫博物院',
-                desc:'建立于1925年，是在明朝、清朝两代皇宫及其收藏的基础上建立起来的中国综合性博物馆'
-            }
-        ]
-    }
+props:{
+    list:Array
 },
 }
 </script>
