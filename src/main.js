@@ -13,7 +13,7 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 // 引入字体图标   简化路径：在build中配置了'styles':resolve('src/assets/styles'),
 import 'styles/iconfont.css'
-import 'swiper/dist/css/swiper.css'
+import 'swiper/swiper-bundle.css'
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
