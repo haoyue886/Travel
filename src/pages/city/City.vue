@@ -2,17 +2,23 @@
   <div>
       <city-header></city-header>
       <CitySearch></CitySearch>
+      <city-list></city-list>
+      <city-alphabet></city-alphabet>
   </div>
 </template>
 
 <script>
 import CityHeader from './components/Header.vue'
 import CitySearch from './components/Search.vue'
+import CityList from './components/List'
+import CityAlphabet from './components/Alphabet'
 export default {
 name:'City',
 components:{
  CityHeader,
  CitySearch,
+ CityList,
+ CityAlphabet
 }
 }
 </script>
