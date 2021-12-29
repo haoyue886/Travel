@@ -12,12 +12,12 @@
         <div class="area">
             <div class="title border-topbottom">热门城市</div>
             <div class="button-list">
-                <div class="button-wrapper" v-for="item of hot" :key="item.id">
+                <div class="button-wrapper" v-for="item of hot" :key="item.id" >
                     <div class="button">{{item.name}}</div>
                 </div>
             </div>
         </div>
-        <div class="area" v-for="(value,k) of cities" :key="k">
+        <div class="area" v-for="(value,k) of cities" :key="k" :ref="k">
             <div class="title border-topbottom">{{k}}</div>
             <div class="item-list">
                 <div class="item border-bottom" v-for="item of value" :key="item.id">{{item.name}}</div>
@@ -34,7 +34,18 @@ export default {
 name:'CityList',
 props:{
   cities:Object,
-  hot:Array
+  hot:Array,
+  letter:String
+},
+watch:{
+  letter(){
+       if (this.letter) {
+        //  获取对应元素
+        const element = this.$refs[this.letter][0]
+        //滚动到指定元素上
+        this.scroll.scrollToElement(element)
+      }
+  }
 },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
