@@ -46,7 +46,7 @@ computed:{
 },
 methods: {
   handleCityClick(city){
-    this.bian(city)
+    this.BIAN(city)
     this.$router.push('/')
   },
   ...mapMutations(['BIAN'])
